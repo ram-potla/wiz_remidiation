@@ -1,0 +1,29 @@
+# service-repos.yaml
+services:
+  auth-service:
+    repo_url: https://github.com/yourorg/auth-service.git
+    default_branch: main
+    tech: java
+    build_tool: maven
+    test_command: mvn test
+
+  payment-service:
+    repo_url: https://github.com/yourorg/payment-service.git
+    default_branch: main
+    tech: java
+    build_tool: maven
+    test_command: mvn test
+
+  user-service:
+    repo_url: https://github.com/yourorg/user-service.git
+    default_branch: develop
+    tech: java
+    build_tool: gradle
+    test_command: gradle test
+
+  order-service:
+    repo_url: https://github.com/yourorg/order-service.git
+    default_branch: main
+    tech: java
+    build_tool: maven
+    test_command: mvn test

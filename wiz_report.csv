@@ -1,0 +1,4 @@
+IssueID,Severity,Type,Service,FilePath,LineNumber,Description,Recommendation
+WIZ-001,CRITICAL,SQL Injection,auth-service,src/main/java/com/company/auth/UserRepository.java,45,User input concatenated in SQL query,Use PreparedStatement
+WIZ-002,HIGH,Outdated Dependency,auth-service,pom.xml,N/A,log4j version 2.14.0 has CVE-2021-44228,Update to 2.17.1
+WIZ-003,CRITICAL,Hardcoded Secret,payment-service,src/main/java/com/company/payment/Config.java,12,API key hardcoded in source,Move to environment variable

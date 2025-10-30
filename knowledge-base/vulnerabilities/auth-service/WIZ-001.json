@@ -1,0 +1,16 @@
+{
+  "id": "WIZ-001",
+  "wiz_id": "WIZ-001",
+  "severity": "CRITICAL",
+  "type": "sql-injection",
+  "service": "auth-service",
+  "file_path": "src/main/java/com/company/auth/UserRepository.java",
+  "line_number": 45,
+  "title": "SQL Injection",
+  "description": "User input concatenated in SQL query",
+  "recommendation": "Use PreparedStatement",
+  "repo_url": "https://github.com/yourorg/auth-service.git",
+  "default_branch": "main",
+  "imported_at": "2025-10-30T11:27:41.448997",
+  "status": "OPEN"
+}

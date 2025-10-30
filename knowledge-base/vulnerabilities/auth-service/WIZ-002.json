@@ -1,0 +1,19 @@
+{
+  "id": "WIZ-002",
+  "wiz_id": "WIZ-002",
+  "severity": "HIGH",
+  "type": "dependency",
+  "service": "auth-service",
+  "file_path": "pom.xml",
+  "line_number": null,
+  "title": "Outdated Dependency",
+  "description": "log4j version 2.14.0 has CVE-2021-44228",
+  "recommendation": "Update to 2.17.1",
+  "repo_url": "https://github.com/yourorg/auth-service.git",
+  "default_branch": "main",
+  "imported_at": "2025-10-30T11:27:41.449406",
+  "status": "OPEN",
+  "package_name": "log4j",
+  "current_version": "2.14.0",
+  "fixed_version": "2.17.1"
+}

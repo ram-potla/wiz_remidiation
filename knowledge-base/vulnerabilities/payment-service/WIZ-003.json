@@ -1,0 +1,16 @@
+{
+  "id": "WIZ-003",
+  "wiz_id": "WIZ-003",
+  "severity": "CRITICAL",
+  "type": "hardcoded-secret",
+  "service": "payment-service",
+  "file_path": "src/main/java/com/company/payment/Config.java",
+  "line_number": 12,
+  "title": "Hardcoded Secret",
+  "description": "API key hardcoded in source",
+  "recommendation": "Move to environment variable",
+  "repo_url": "https://github.com/yourorg/payment-service.git",
+  "default_branch": "main",
+  "imported_at": "2025-10-30T11:27:41.449692",
+  "status": "OPEN"
+}

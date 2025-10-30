@@ -1,0 +1,17 @@
+{
+  "import_date": "2025-10-30T11:27:41.449873",
+  "total_vulnerabilities": 3,
+  "by_severity": {
+    "CRITICAL": 2,
+    "HIGH": 1
+  },
+  "by_type": {
+    "sql-injection": 1,
+    "dependency": 1,
+    "hardcoded-secret": 1
+  },
+  "by_service": {
+    "auth-service": 2,
+    "payment-service": 1
+  }
+}
