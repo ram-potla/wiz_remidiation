@@ -4,11 +4,15 @@ import json
 import subprocess
 from pathlib import Path
 import shutil
+import pathlib
+
 
 mcp = FastMCP("Wiz Remediation Agent for Java Services")
 
 KB_PATH = Path("knowledge-base")
 WORKSPACE = Path("workspace")
+mcp_server_dir = pathlib.Path(__file__).parent
+vulnerability_folder_path = mcp_server_dir / "knowledge-base" / "vulnerabilities"
 
 # ============= Discovery Tools =============
 
@@ -16,8 +20,8 @@ WORKSPACE = Path("workspace")
 def list_services() -> list:
     """List all Java services with vulnerabilities"""
     services = []
-    
-    vuln_dir = WORKSPACE / KB_PATH / "vulnerabilities"
+
+    vuln_dir = vulnerability_folder_path
     for service_dir in vuln_dir.iterdir():
         if service_dir.is_dir():
             vuln_count = len(list(service_dir.glob("*.json")))
@@ -33,7 +37,7 @@ def list_services() -> list:
 @mcp.tool()
 def get_service_vulnerabilities(service_name: str) -> list:
     """Get all vulnerabilities for a Java service"""
-    service_dir = KB_PATH / "vulnerabilities" / service_name
+    service_dir = vulnerability_folder_path / service_name
     
     if not service_dir.exists():
         return []
@@ -54,7 +58,7 @@ def get_vulnerability(wiz_id: str) -> dict:
     """Get detailed information about a specific vulnerability"""
     
     # Search across all services
-    for service_dir in (KB_PATH / "vulnerabilities").iterdir():
+    for service_dir in vulnerability_folder_path.iterdir():
         vuln_file = service_dir / f"{wiz_id}.json"
         if vuln_file.exists():
             with open(vuln_file) as f:
@@ -69,7 +73,7 @@ def clone_java_service(service_name: str) -> dict:
     """Clone a Java service repository"""
     
     # Get repo URL from service mapping
-    service_file = KB_PATH / "services" / f"{service_name}.yaml"
+    service_file = vulnerability_folder_path / "services" / f"{service_name}.yaml"
     if not service_file.exists():
         return {"error": f"Service {service_name} not configured"}
     
