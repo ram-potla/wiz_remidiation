@@ -22,14 +22,14 @@ class WizReportProcessor:
         vulnerabilities = []
         
         with open(self.report_path) as f:
-            reader = csv.DictReader(f)
+            reader = csv.DictReader(f
             
             for row in reader:
                 vuln = self.parse_vulnerability(row)
                 vulnerabilities.append(vuln)
                 self.save_vulnerability(vuln)
         
-        print(f"✅ Processed {len(vulnerabilities)} vulnerabilities")
+        print(f"✅ Processed {len(vulnrabilities)} vulnerabilities")
         return vulnerabilities
     
     def parse_vulnerability(self, row: dict) -> dict:
